@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+<!-- servlet配置 -->
+  <servlet>
+    <servlet-name>trans</servlet-name>
+    <servlet-class>servlet.Transmit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>trans</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>usrctrl</servlet-name>
+    <servlet-class>servlet.UserCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>usrctrl</servlet-name>
+    <url-pattern>*.usr</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>Registerctrl</servlet-name>
+    <servlet-class>servlet.RegisterCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Registerctrl</servlet-name>
+  	<url-pattern>*.reg</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>OrderCtrl</servlet-name>
+  	<servlet-class>servlet.OrderCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OrderCtrl</servlet-name>
+  	<url-pattern>*.ord</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- filter配置 -->
+  <filter>
+    <filter-name>loginfilter</filter-name>
+    <filter-class>filter.loginfilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginfilter</filter-name>
+    <url-pattern>*.usr</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>loginfilter</filter-name>
+    <url-pattern>/view/Mine.jsp</url-pattern>
+  </filter-mapping>
+</web-app>
